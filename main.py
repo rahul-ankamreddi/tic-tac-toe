@@ -1,5 +1,11 @@
 # tic-tac-toe game which can be played on terminal/console.
 
+def check_winner(moves):
+
+    
+    
+    pass
+
 if __name__=="__main__":
     print("Welcome to Tic-Tac-Toe game:")
     print(''' 
@@ -26,6 +32,10 @@ if __name__=="__main__":
     turn = 0
 
     while runs:
+        if turn== 9:
+            print("Game ended!!!")
+            break
+
         if turn%2 == 0:
             position = input("Player 'X' Give position : ")
         else:
@@ -34,15 +44,19 @@ if __name__=="__main__":
         if position == 'end':
             break
 
-        for move in board:
-            if position == move[0]:
-                if turn%2 == 0:
-                    move[1] = "X"
+        for square in board:
+            if position == square[0]:
+                if square[1] == ' ':
+                    if turn%2 == 0:
+                        square[1] = "X"
+                    else:
+                        square[1] = "O"
+                    turn = turn + 1
                 else:
-                  move[1] = "O"
-                turn = turn + 1
-
-        print(f''' 
+                    print("\n** Position already filled give another **\n")
+                    break
+            
+                print(f''' 
          |     |
       {board[6][1]}  |  {board[7][1]}  |  {board[8][1]}  
          |     |
@@ -59,5 +73,7 @@ if __name__=="__main__":
 
       00    10    20 
  ''') 
-      #   runs = False
+      
+        # runs = False
+
     pass
