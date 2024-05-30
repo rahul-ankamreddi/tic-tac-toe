@@ -37,7 +37,7 @@ def get_move(list_of_moves):
             valid = True
             list_of_moves.remove(move)
         else:
-            print("Give valid move")
+            print("\n**  Give valid move  **\n")
     return move
 
 
